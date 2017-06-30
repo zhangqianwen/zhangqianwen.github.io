@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Hexo</title>
   
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://zhangqianwen.github.io/blog/"/>
+  <link href="https://zhangqianwen.github.io/"/>
   <updated>2017-06-30T15:53:39.692Z</updated>
-  <id>https://zhangqianwen.github.io/blog/</id>
+  <id>https://zhangqianwen.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://zhangqianwen.github.io/blog/2017/06/30/hello-world/"/>
-    <id>https://zhangqianwen.github.io/blog/2017/06/30/hello-world/</id>
+    <link href="https://zhangqianwen.github.io/2017/06/30/hello-world/"/>
+    <id>https://zhangqianwen.github.io/2017/06/30/hello-world/</id>
     <published>2017-06-30T15:53:39.692Z</published>
     <updated>2017-06-30T15:53:39.692Z</updated>
     
