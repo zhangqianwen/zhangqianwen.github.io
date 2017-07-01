@@ -104,8 +104,8 @@
 <meta property="og:site_name" content="Cheven&#39;s Notes">
 <meta property="og:description" content="概述排序算法按照是否使用使用外部存储分为两类：内部排序和外部排序。其中内部排序是数据记录在内存中进行排序，外部排序由于数据量较大超过内存到允许大小，因此在排序到过程中需要访问外存。  对数据量较大到数据进行排序，应该考虑吧使用时间复杂度为O(nlog2n)的排序方法：堆排序、快速排序以及归并排序。 快速排序是目前基于比较的内部排序算法中最好的。在待排序的关键字是随机分布时，这种排序算法的效率是最高">
 <meta property="og:image" content="https://zhangqianwen.github.io/pictures/SortAlgorithm/1.png">
-<meta property="og:image" content="https://zhangqianwen.github.io/2017/07/01/SortAlgorithm/1.png">
-<meta property="og:updated_time" content="2017-07-01T11:00:58.736Z">
+<meta property="og:image" content="https://zhangqianwen.github.io/pictures/SortAlgorithm/2.png">
+<meta property="og:updated_time" content="2017-07-01T11:04:01.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sort Algorithm">
 <meta name="twitter:description" content="概述排序算法按照是否使用使用外部存储分为两类：内部排序和外部排序。其中内部排序是数据记录在内存中进行排序，外部排序由于数据量较大超过内存到允许大小，因此在排序到过程中需要访问外存。  对数据量较大到数据进行排序，应该考虑吧使用时间复杂度为O(nlog2n)的排序方法：堆排序、快速排序以及归并排序。 快速排序是目前基于比较的内部排序算法中最好的。在待排序的关键字是随机分布时，这种排序算法的效率是最高">
@@ -339,8 +339,8 @@
         <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>排序算法按照是否使用使用外部存储分为两类：内部排序和外部排序。其中内部排序是数据记录在内存中进行排序，外部排序由于数据量较大超过内存到允许大小，因此在排序到过程中需要访问外存。</p>
 <p><img src="/pictures/SortAlgorithm/1.png" alt=""></p>
 <p>对数据量较大到数据进行排序，应该考虑吧使用时间复杂度为O(nlog2n)的排序方法：<em>堆排序、快速排序以及归并排序</em>。</p>
-<p><font color="red" size="2">快速排序</font>是目前基于比较的内部排序算法中最好的。在待排序的关键字是随机分布时，这种排序算法的效率是最高的。</p>
-<h2 id="1-插入排序-直接插入排序（Straight-Insertion-Sort）"><a href="#1-插入排序-直接插入排序（Straight-Insertion-Sort）" class="headerlink" title="1.插入排序-直接插入排序（Straight Insertion Sort）"></a>1.插入排序-直接插入排序（Straight Insertion Sort）</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>将一个元素插入到一个有序元素序列中，得到一个长度+1的新的有序元素序列。即，将待排序序列的第一个元素看成一个有序的序列，从第二个元素开始依次插入，每次都要保证序列的有序。<br><img src="1.png" alt=""></p>
+<p><strong>快速排序</strong>是目前基于比较的内部排序算法中最好的。在待排序的关键字是随机分布时，这种排序算法的效率是最高的。</p>
+<h2 id="1-插入排序-直接插入排序（Straight-Insertion-Sort）"><a href="#1-插入排序-直接插入排序（Straight-Insertion-Sort）" class="headerlink" title="1.插入排序-直接插入排序（Straight Insertion Sort）"></a>1.插入排序-直接插入排序（Straight Insertion Sort）</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>将一个元素插入到一个有序元素序列中，得到一个长度+1的新的有序元素序列。即，将待排序序列的第一个元素看成一个有序的序列，从第二个元素开始依次插入，每次都要保证序列的有序。<br><img src="/pictures/SortAlgorithm/2.png" alt=""></p>
 <p>如果插入到元素和有序序列中到某一元素相等，则插入在该元素的后面，两个相等到元素在排序到过程中顺序是不会被打乱的。因此，直接插入排序是<strong>稳定的</strong>。</p>
 <h3 id="算法实现（java）"><a href="#算法实现（java）" class="headerlink" title="算法实现（java）"></a>算法实现（java）</h3>
       
