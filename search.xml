@@ -12,9 +12,62 @@
 <h2 id="1-插入排序-直接插入排序（Straight-Insertion-Sort）"><a href="#1-插入排序-直接插入排序（Straight-Insertion-Sort）" class="headerlink" title="1.插入排序-直接插入排序（Straight Insertion Sort）"></a>1.插入排序-直接插入排序（Straight Insertion Sort）</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>将一个元素插入到一个有序元素序列中，得到一个长度+1的新的有序元素序列。即，将待排序序列的第一个元素看成一个有序的序列，从第二个元素开始依次插入，每次都要保证序列的有序。<br><img src="/pictures/SortAlgorithm/2.png" alt=""></p>
 <p>如果插入到元素和有序序列中到某一元素相等，则插入在该元素的后面，两个相等到元素在排序到过程中顺序是不会被打乱的。因此，直接插入排序是<strong>稳定的</strong>。</p>
 <h3 id="算法实现（java）"><a href="#算法实现（java）" class="headerlink" title="算法实现（java）"></a>算法实现（java）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">StraightInsertionSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> n = a.length;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</div><div class="line">      <span class="keyword">int</span> tmp = a[i];</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++ ) &#123;</div><div class="line">        <span class="keyword">if</span> (a[i] &gt;= a[j]) &#123;</div><div class="line">          <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> tmpind = j;</div><div class="line">        <span class="keyword">while</span> (j &lt; i) &#123;</div><div class="line">            a[i] = a[--i];</div><div class="line">        &#125;</div><div class="line">        a[tmpind] = tmp;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h3 id="效率"><a href="#效率" class="headerlink" title="效率"></a>效率</h3><p>O(n^2)</p>
+<h3 id="效率"><a href="#效率" class="headerlink" title="效率"></a>效率</h3><p>空间复杂度O(1)。最好时间复杂度O(n)，最坏时间复杂度O(n^2)，平均时间复杂度为O(n^2)。最好情况下（已有序），比较次数n-1，移动次数0，最坏情况，比较次数O(n^2)，移动次数O(n^2)</p>
+<p>适合少量数据的排序，或者数据基本已经有序的情况。</p>
+<h2 id="2-插入排序-希尔排序（Shell-Sort）"><a href="#2-插入排序-希尔排序（Shell-Sort）" class="headerlink" title="2.插入排序-希尔排序（Shell Sort）"></a>2.插入排序-希尔排序（Shell Sort）</h2><h3 id="基本思想-1"><a href="#基本思想-1" class="headerlink" title="基本思想"></a>基本思想</h3><p>将待排元素序列分割成若干个子序列（由相隔某个增量的元素组成），分别进行插入排序，</p>
+<h2 id="3-选择排序—简单选择排序（Simple-Selection-Sort）"><a href="#3-选择排序—简单选择排序（Simple-Selection-Sort）" class="headerlink" title="3.选择排序—简单选择排序（Simple Selection Sort）"></a>3.选择排序—简单选择排序（Simple Selection Sort）</h2><h3 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h3><p>在待排序的数组中选择最小的一个数与序列的第一个数进行交换，直到序列中所有到元素都有序。<br><img src="/pictures/SortAlgorithm/3.png" alt=""></p>
+<h3 id="算法实现（java）-1"><a href="#算法实现（java）-1" class="headerlink" title="算法实现（java）"></a>算法实现（java）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SimpleSelectionSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> n = a.length;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n-<span class="number">1</span> ;i++ ) &#123;</div><div class="line">      <span class="keyword">int</span> minidx = i;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; n ;j++ ) &#123;</div><div class="line">        <span class="keyword">if</span> (a[j] &lt; a[minidx]) &#123;</div><div class="line">          minidx = j;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">int</span> tmp = a[i];</div><div class="line">      a[i] = a[minidx];</div><div class="line">      a[minidx] = tmp;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="效率-1"><a href="#效率-1" class="headerlink" title="效率"></a>效率</h3><p>1、空间复杂度O(1)，最好/最坏/平均时间复杂度都是O(n^2)，比较次数O(n^2)，移动次数O(n)。</p>
+<p>2、<strong>选择排序是不稳定的排序方法</strong>（比如序列[5， 5， 3]第一次就将第一个[5]与[3]交换，导致第一个5挪动到第二个5后面）。</p>
+<h2 id="4-选择排序—堆排序（Heap-Sort）"><a href="#4-选择排序—堆排序（Heap-Sort）" class="headerlink" title="4. 选择排序—堆排序（Heap Sort）"></a>4. 选择排序—堆排序（Heap Sort）</h2><h3 id="基本思路-1"><a href="#基本思路-1" class="headerlink" title="基本思路"></a>基本思路</h3><h2 id="5-交换排序—冒泡排序（Bubble-Sort）"><a href="#5-交换排序—冒泡排序（Bubble-Sort）" class="headerlink" title="5. 交换排序—冒泡排序（Bubble Sort）"></a>5. 交换排序—冒泡排序（Bubble Sort）</h2><h3 id="基本思路-2"><a href="#基本思路-2" class="headerlink" title="基本思路"></a>基本思路</h3><p>比较相邻的元素，如果前者比后者大，就交换他们两个，对从前往后对每一对相邻元素作同样的工作，这样一趟冒泡后，最后的元素就是最大的数。这样每一趟冒泡确定一个元素的位置，n趟后数组即有序。同样也可以从后往前冒泡，依次确定最小值。</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> n = a.length;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; i++) &#123;</div><div class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = n-<span class="number">1</span>; j &gt; i; j--) &#123;</div><div class="line">      <span class="keyword">if</span> (a[j] &lt; a[j-<span class="number">1</span>]) &#123;</div><div class="line">        <span class="keyword">int</span> tmp = a[j-<span class="number">1</span>];</div><div class="line">        a[j-<span class="number">1</span>] = a[j];</div><div class="line">        a[j] = tmp;</div><div class="line">        flag = <span class="number">1</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (flag == <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="效率-2"><a href="#效率-2" class="headerlink" title="效率"></a>效率</h3><p>1、空间复杂度O(1)，最好时间复杂度O(n)，最坏时间复杂度O(n^2)，平均时间复杂度O(n^2)。</p>
+<p>2、<strong>冒泡排序时稳定的</strong>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>(1)<strong>平方阶(O(n^2))排序</strong></p>
+<p>各类简单排序:直接插入、直接选择和冒泡排序；</p>
+<p>(2)<strong>线性对数阶(O(nlog2n))排序</strong></p>
+<p>快速排序、堆排序和归并排序；</p>
+<p>(3)<strong>O(n1+§))排序,§是介于0和1之间的常数</strong></p>
+<p>希尔排序</p>
+<p>(4)<strong>线性阶(O(n))排序</strong></p>
+<p>基数排序，此外还有桶、箱排序。</p>
+<p><em>说明：</em></p>
+<p>当原表有序或基本有序时，直接插入排序和冒泡排序将大大减少比较次数和移动记录的次数，时间复杂度可降至O（n）；</p>
+<p>而快速排序则相反，当原表基本有序时，将蜕化为冒泡排序，时间复杂度提高为O（n2）；</p>
+<p>原表是否有序，对简单选择排序、堆排序、归并排序和基数排序的时间复杂度影响不大。</p>
+<h3 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h3><p>排序算法的稳定性:若待排序的序列中，<strong>存在多个具有相同关键字的记录</strong>，经过排序， 这些记录的相对次序保持不变，则称该算法是稳定的；若经排序后，记录的相对 次序发生了改变，则称该算法是不稳定的。</p>
+<p><strong>稳定性的好处</strong>:排序算法如果是稳定的，那么从一个键上排序，然后再从另一个键上排序，第一个键排序的结果可以为第二个键排序所用。基数排序就是这样，先按低位排序，逐次按高位排序，低位相同的元素其顺序再高位也相同时是不会改变的。另外，如果排序算法稳定，可以避免多余的比较；</p>
+<p><strong>稳定的排序算法</strong>：冒泡排序、插入排序、归并排序和基数排序</p>
+<p><strong>不是稳定的排序算法</strong>：选择排序、快速排序、希尔排序、堆排序</p>
+<h3 id="选择排序算法准则"><a href="#选择排序算法准则" class="headerlink" title="选择排序算法准则"></a>选择排序算法准则</h3><p>每种排序算法都各有优缺点。因此，在实用时需根据不同情况适当选用，甚至可以将多种方法结合起来使用。</p>
+<p>选择排序算法的依据</p>
+<p>影响排序的因素有很多，平均时间复杂度低的算法并不一定就是最优的。相反，有时平均时间复杂度高的算法可能更适合某些特殊情况。同时，选择算法时还得考虑它的可读性，以利于软件的维护。一般而言，需要考虑的因素有以下四点：</p>
+<p>1．待排序的记录数目n的大小；</p>
+<p>2．记录本身数据量的大小，也就是记录中除关键字外的其他信息量的大小；</p>
+<p>3．关键字的结构及其分布情况；</p>
+<p>4．对排序稳定性的要求。</p>
+<p>设待排序元素的个数为n.</p>
+<p>1）当n较大，则应采用时间复杂度为O(nlog2n)的排序方法：快速排序、堆排序或归并排序序。</p>
+<p>   快速排序：是目前基于比较的内部排序中被认为是最好的方法，当待排序的关键字是随机分布时，快速排序的平均时间最短；</p>
+<p>   堆排序 ：  如果内存空间允许且要求稳定性的，</p>
+<p>   归并排序：它有一定数量的数据移动，所以我们可能过与插入排序组合，先获得一定长度的序列，然后再合并，在效率上将有所提高。</p>
+<p>2）当n较大，内存空间允许，且要求稳定性 =》归并排序</p>
+<p>3）当n较小，可采用直接插入或直接选择排序。</p>
+<p>直接插入排序：当元素分布有序，直接插入排序将大大减少比较次数和移动记录的次数。</p>
+<p>直接选择排序 ：元素分布有序，如果不要求稳定性，选择直接选择排序</p>
+<p>5）一般不使用或不直接使用传统的冒泡排序。</p>
+<p>6）基数排序<br>它是一种稳定的排序算法，但有一定的局限性：</p>
+<p>　　1、关键字可分解。</p>
+<p>　　2、记录的关键字位数较少，如果密集更好</p>
+<p>　　3、如果是数字时，最好是无符号的，否则将增加相应的映射复杂度，可先将其正负分开排序。</p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> Algorithm </tag>
+            
+        </tags>
         
     </entry>
     
