@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangqianwen.github.io/"/>
-  <updated>2017-07-01T02:06:20.523Z</updated>
+  <updated>2017-07-01T09:18:42.827Z</updated>
   <id>https://zhangqianwen.github.io/</id>
   
   <author>
@@ -16,13 +16,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="https://zhangqianwen.github.io/2017/07/01/test/"/>
-    <id>https://zhangqianwen.github.io/2017/07/01/test/</id>
+    <title>Sort Algorithm</title>
+    <link href="https://zhangqianwen.github.io/2017/07/01/SortAlgorithm/"/>
+    <id>https://zhangqianwen.github.io/2017/07/01/SortAlgorithm/</id>
     <published>2017-07-01T02:06:20.000Z</published>
-    <updated>2017-07-01T02:06:20.523Z</updated>
+    <updated>2017-07-01T09:18:42.827Z</updated>
+    
+    <content type="html"><![CDATA[<p>##概述</p>
+<p>排序算法按照是否使用使用外部存储分为两类：内部排序和外部排序。其中内部排序是数据记录在内存中进行排序，外部排序由于数据量较大超过内存到允许大小，因此在排序到过程中需要访问外存。</p>
+<p><img src=".png" alt=""></p>
+<p>对数据量较大到数据进行排序，应该考虑吧使用时间复杂度为<br>[<br>e ^ {i/pi}<br>]</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;##概述&lt;/p&gt;
+&lt;p&gt;排序算法按照是否使用使用外部存储分为两类：内部排序和外部排序。其中内部排序是数据记录在内存中进行排序，外部排序由于数据量较大超过内存到允许大小，因此在排序到过程中需要访问外存。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;
     
     </summary>
     
