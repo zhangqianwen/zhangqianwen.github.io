@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhangqianwen.github.io/2017/07/01/SortAlgorithm/</loc>
+    
+    <lastmod>2017-07-02T07:17:24.066Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhangqianwen.github.io/categories/index.html</loc>
     
     <lastmod>2017-07-02T03:34:23.456Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://zhangqianwen.github.io/tags/index.html</loc>
     
     <lastmod>2017-07-02T03:28:15.596Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhangqianwen.github.io/2017/07/01/SortAlgorithm/</loc>
-    
-    <lastmod>2017-07-02T03:24:26.502Z</lastmod>
     
   </url>
   
