@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangqianwen.github.io/"/>
-  <updated>2017-07-02T03:19:11.643Z</updated>
+  <updated>2017-07-02T03:24:26.502Z</updated>
   <id>https://zhangqianwen.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://zhangqianwen.github.io/2017/07/01/SortAlgorithm/"/>
     <id>https://zhangqianwen.github.io/2017/07/01/SortAlgorithm/</id>
     <published>2017-07-01T02:06:20.000Z</published>
-    <updated>2017-07-02T03:19:11.643Z</updated>
+    <updated>2017-07-02T03:24:26.502Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>排序算法按照是否使用使用外部存储分为两类：内部排序和外部排序。其中内部排序是数据记录在内存中进行排序，外部排序由于数据量较大超过内存到允许大小，因此在排序到过程中需要访问外存。</p>
 <p><img src="/pictures/SortAlgorithm/1.png" alt=""></p>
