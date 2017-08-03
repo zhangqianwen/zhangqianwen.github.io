@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangqianwen.github.io/"/>
-  <updated>2017-08-03T04:28:34.462Z</updated>
+  <updated>2017-08-03T04:30:49.866Z</updated>
   <id>https://zhangqianwen.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://zhangqianwen.github.io/2017/08/03/Learning-GDB/"/>
     <id>https://zhangqianwen.github.io/2017/08/03/Learning-GDB/</id>
     <published>2017-08-03T04:28:03.000Z</published>
-    <updated>2017-08-03T04:28:34.462Z</updated>
+    <updated>2017-08-03T04:30:49.866Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>记录GDB学习</p>
 <h2 id="信息显示"><a href="#信息显示" class="headerlink" title="信息显示"></a>信息显示</h2><p><strong>版本信息</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">cheven@cheven-GL552JX:~$ gdb</div><div class="line">GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1</div><div class="line">Copyright (C) 2016 Free Software Foundation, Inc.</div><div class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</div><div class="line">This is free software: you are free to change and redistribute it.</div><div class="line">There is NO WARRANTY, to the extent permitted by law.  Type "show copying"</div><div class="line">and "show warranty" for details.</div><div class="line">This GDB was configured as "x86_64-linux-gnu".</div><div class="line">Type "show configuration" for configuration details.</div><div class="line">For bug reporting instructions, please see:</div><div class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;.</div><div class="line">Find the GDB manual and other documentation resources online at:</div><div class="line">&lt;http://www.gnu.org/software/gdb/documentation/&gt;.</div><div class="line">For help, type "help".</div><div class="line">Type "apropos word" to search for commands related to "word".</div></pre></td></tr></table></figure></p>
@@ -31,11 +31,9 @@
 <p>在上面的命令行中，使用 -o 参数指定了编译生成的可执行文件名为 sample，使用参数 -g 表示将源代码信息编译到可执行文件中。如果不使用参数 -g，会给后面的GDB调试造成不便。当然，如果我们没有程序的源代码，自然也无从使用 -g 参数，调试/跟踪时也只能是汇编代码级别的调试/跟踪。</p>
 <p><strong>常用命令</strong></p>
 <ul>
-<li>加载文件</li>
-</ul>
-<p>直接进入gdb而未加载可执行文件，或者加载了目标文件，想换一个其他的——可以使用<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) file test2</div></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) exec(-file) test2</div></pre></td></tr></table></figure></p>
-<ul>
+<li><p>加载文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>直接进入gdb而未加载可执行文件，或者加载了目标文件，想换一个其他的——可以使用</div><div class="line">(gdb) file test2</div><div class="line">(gdb) exec(-file) test2</div></pre></td></tr></table></figure>
+</li>
 <li><p>设置断点</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>&lt;rowNums...&gt;代表想要设立断点的行数</div><div class="line">(gdb)b(reakpoints) &lt;rowNums...&gt;</div><div class="line"></div><div class="line">(gdb) b func</div><div class="line">(gdb) b *func</div><div class="line"><span class="meta"></span></div><div class="line">#列表打印所有已设立的断点</div><div class="line">(gdb) info b(reakpoints)</div><div class="line"><span class="meta"></span></div><div class="line">#代表删除第Num个断点</div><div class="line">(gdb) d(elete) Num</div></pre></td></tr></table></figure>
 </li>
@@ -66,6 +64,8 @@
     
     </summary>
     
+    
+      <category term="GDB" scheme="https://zhangqianwen.github.io/tags/GDB/"/>
     
   </entry>
   

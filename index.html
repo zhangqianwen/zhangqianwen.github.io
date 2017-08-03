@@ -342,11 +342,9 @@
 <p>在上面的命令行中，使用 -o 参数指定了编译生成的可执行文件名为 sample，使用参数 -g 表示将源代码信息编译到可执行文件中。如果不使用参数 -g，会给后面的GDB调试造成不便。当然，如果我们没有程序的源代码，自然也无从使用 -g 参数，调试/跟踪时也只能是汇编代码级别的调试/跟踪。</p>
 <p><strong>常用命令</strong></p>
 <ul>
-<li>加载文件</li>
-</ul>
-<p>直接进入gdb而未加载可执行文件，或者加载了目标文件，想换一个其他的——可以使用<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) file test2</div></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(gdb) exec(-file) test2</div></pre></td></tr></table></figure></p>
-<ul>
+<li><p>加载文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>直接进入gdb而未加载可执行文件，或者加载了目标文件，想换一个其他的——可以使用</div><div class="line">(gdb) file test2</div><div class="line">(gdb) exec(-file) test2</div></pre></td></tr></table></figure>
+</li>
 <li><p>设置断点</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>&lt;rowNums...&gt;代表想要设立断点的行数</div><div class="line">(gdb)b(reakpoints) &lt;rowNums...&gt;</div><div class="line"></div><div class="line">(gdb) b func</div><div class="line">(gdb) b *func</div><div class="line"><span class="meta"></span></div><div class="line">#列表打印所有已设立的断点</div><div class="line">(gdb) info b(reakpoints)</div><div class="line"><span class="meta"></span></div><div class="line">#代表删除第Num个断点</div><div class="line">(gdb) d(elete) Num</div></pre></td></tr></table></figure>
 </li>
@@ -663,7 +661,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
